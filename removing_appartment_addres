@@ -1,0 +1,13 @@
+import pandas as pd
+df = pd.read_csv("firstfile.csv") # create DataFrame from csv file
+#print(df.head())
+#print(df.info())
+print(len(df))
+print(df.isnull().sum())
+
+
+# delete 
+df = df.dropna(subset=['Address'])
+df = df.dropna()
+print(f"printing new length {len(df)}")
+df.to_csv('houseprice_clean.csv', index=False) #index = false yani shomare radif qadim ro nazar to jadid
